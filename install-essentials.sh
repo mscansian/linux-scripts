@@ -19,6 +19,7 @@ sudo apt-get install inkscape -y
 sudo apt-get install grub-customizer -y
 sudo apt-get install gparted -y
 sudo apt-get install pinta -y
+sudo apt-get install keepass2 -y
 sudo apt-get install wine -y
 
 #f.luxgui
