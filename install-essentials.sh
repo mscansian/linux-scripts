@@ -44,6 +44,7 @@ sudo pip install virtualenv -y
 # Set up GIT
 git config --global user.email "mscansian@gmail.com"
 git config --global user.name "Matheus Cansian"
+git config --global push.default simple
 
 chmod +x *.sh
 chmod +x app-install/*.sh
