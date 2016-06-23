@@ -1,6 +1,7 @@
 alias myip='wget -qO - http://drpexe.com/ip.php && echo'
 alias rm-pyc='find . -name "*.pyc" -type f -delete'
 alias rm-tmp='find . -name "~*" -type f -delete'
+alias cls='printf "\033c"'
 
 # Python validators
 alias pep8-100='pep8 --max-line-length=99'
