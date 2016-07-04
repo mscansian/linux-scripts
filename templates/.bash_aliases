@@ -23,6 +23,16 @@ alias gsl='git stash list'
 alias gss='git stash save'
 alias gsp='git stash pop'
 
+# OpenFOAM
+alias of301='export FOAM_INST_DIR=/opt/OpenFOAM && source /opt/OpenFOAM/OpenFOAM-3.0.1/etc/bashrc && echo "OpenFOAM 3.0.1"'
+alias fe31='export FOAM_INST_DIR=/opt/OpenFOAM && source /opt/OpenFOAM/foam-extend-3.1/etc/bashrc && echo "foam-extend 3.1"'
+alias pyFoam='source /opt/OpenFOAM/pyFoam/bin/activate && echo -e "pyFoam activated\nRun \"deactivate\" to exit"'
+
+alias salome='/opt/SALOME/salome'
+
+# Tor Browser
+alias tor='/opt/tor-browser/start-tor-browser -v'
+
 cpulimit-c() {
     cpulimit -l $1 -- $2
 }
