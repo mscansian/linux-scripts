@@ -1,60 +1,84 @@
 #!/bin/bash
 
 curdir=$(pwd)
+chmod +x *.sh
+chmod +x app-install/*.sh
 
-#First it's important to update the system
+##### Update system packages #####
 sudo apt-get update
 sudo apt-get dist-upgrade -y
 
-#Copy some stuff
+# Copy nautilus templates
 cd $curdir
 cp templates/.bash_aliases ~/
 cp templates/empty ~/Templates
 cp templates/python.py ~/Templates
 cp templates/shell.sh ~/Templates
 
-#Fix Ubuntu Software Center font color on GNOME3
-sudo sh -c "cat /usr/share/software-center/ui/gtk3/css/softwarecenter.css | sed 's/@define-color light-aubergine #DED7DB;/@define-color light-aubergine #393F3F;/' | sed 's/@define-color super-light-aubergine #F4F1F3;/@define-color super-light-aubergine #393F3F;/' > /usr/share/software-center/ui/gtk3/css/softwarecenter.css"
+##### Package installs #####
+# Every install ins on a single line to make it easier to comment out unwanted packages
 
-#Every install is on a different line so you can comment out things that you don't want
-sudo apt-get install ubuntu-restricted-extras -y
-sudo apt-get install git gitk -y
-sudo apt-get install python-pip python3-pip -y
-sudo apt-get install gufw -y
-sudo apt-get install filezilla -y
-sudo apt-get install gimp -y
-sudo apt-get install inkscape -y
-sudo apt-get install grub-customizer -y
-sudo apt-get install gparted -y
-sudo apt-get install pinta -y
-sudo apt-get install xdotool -y
-sudo apt-get install gedit-plugins -y
-sudo apt-get install samba -y
-sudo apt-get install keepass2 -y
-sudo apt-get install wine -y
-sudo apt-get install gpick -y
-sudo apt-get install htop -y
-sudo apt-get install make cmake cmake-curses-gui -y
-#sudo apt-get install gnome-shell-pomodoro -y
-sudo apt-get install python-dev python3-dev -y
-#sudo apt-get install apache2 php5 libapache2-mod-php5 php5-mcrypt php5-sqlite php5-curl -y
+## System packages ##
+sudo apt-get install -y ubuntu-restricted-extras
+sudo apt-get install -y make cmake cmake-curses-gui
+sudo apt-get install -y python-dev python3-dev
+sudo apt-get install -y python-pip python3-pip
+sudo apt-get install -y xdotool
 
+## System administration ##
+sudo apt-get install -y gufw
+sudo apt-get install -y grub-customizer
+sudo apt-get install -y gparted
+sudo apt-get install -y samba
+sudo apt-get install -y htop
+
+## Dev ##
+sudo apt-get install -y git gitk
+sudo apt-get install -y filezilla
+sudo apt-get install -y awscli
 sudo pip install virtualenv -y
+#sudo apt-get install -y apache2
+#sudo apt-get install -y php5 libapache2-mod-php5 php5-mcrypt php5-sqlite php5-curl
+#sudo apt-get install -y nginx
 
-# Set up GIT
+## Wine ##
+sudo apt-get install -y wine
+sudo apt-get install -y playonlinux
+
+## Virtualbox ##
+sudo apt-get install -y virtualbox
+
+## Graphics ##
+sudo apt-get install -y gimp
+sudo apt-get install -y inkscape
+sudo apt-get install -y pinta
+sudo apt-get install -y gpick
+
+## Desktop ##
+sudo apt-get install -y gedit-plugins
+sudo apt-get install -y gnome-shell-pomodoro
+
+## Others ##
+sudo apt-get install -y keepass2
+
+
+##### Configuration #####
+
+## GIT ##
 git config --global user.email "mscansian@gmail.com"
 git config --global user.name "Matheus Cansian"
 git config --global push.default simple
 
-chmod +x *.sh
-chmod +x app-install/*.sh
+## Ubuntu Software Center ##
+# Fix for GNOME Shell dark theme
+sudo sh -c "cat /usr/share/software-center/ui/gtk3/css/softwarecenter.css | sed 's/@define-color light-aubergine #DED7DB;/@define-color light-aubergine #393F3F;/' | sed 's/@define-color super-light-aubergine #F4F1F3;/@define-color super-light-aubergine #393F3F;/' > /usr/share/software-center/ui/gtk3/css/softwarecenter.css"
 
-#f.luxgui
-#cd $curdir && source app-install/fluxgui.sh
+##### Additional software #####
 
-#Calibre
-cd && sudo -v && wget -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
-
+cd $curdir && source app-install/calibre.sh
 cd $curdir && source app-install/steam.sh
 cd $curdir && source app-install/chrome.sh
 cd $curdir && source app-install/spotify.sh
+cd $curdir && source app-install/slack.sh
+cd $curdir && source app-install/dropbox.sh
+cd $curdir && source app-install/docker.sh

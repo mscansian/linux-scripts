@@ -10,5 +10,8 @@ echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sourc
 # 3. Update list of available packages
 sudo apt-get update
 
+# Install dependency
+sudo apt-get install libappindicator1 -y
+
 # 4. Install Spotify
 sudo apt-get install spotify-client
