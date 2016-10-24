@@ -54,6 +54,9 @@ sudo apt-get install -y inkscape
 sudo apt-get install -y pinta
 sudo apt-get install -y gpick
 
+## Video ##
+sudo apt-get install -y kazam
+
 ## Desktop ##
 sudo apt-get install -y gedit-plugins
 sudo apt-get install -y gnome-shell-pomodoro
