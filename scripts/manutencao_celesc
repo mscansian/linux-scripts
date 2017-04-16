@@ -1,9 +1,0 @@
-#!/bin/bash
-
-celesc="$(curl --data munic=JOINVILLE http://portal.celesc.com.br/portal/home/aplicacao/aviso_desligamento/)";
-
-if [[ $celesc == *"ITORORO"* ]]
-then
-  curl --silent "http://drpexe.com/scripts/sendemail.php?to=mscansian@gmail.com&subject=Desligamento%20Programado%20CELESC&key=matheus&msg=http://portal.celesc.com.br/portal/home/aplicacao/aviso_desligamento/";
-  echo "";
-fi

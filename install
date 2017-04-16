@@ -1,7 +1,0 @@
-#!/bin/bash
-
-chmod +x scripts/*
-
-# Manutencao Celesc
-# Ubuntu's Anacron make sure that this script is run daily
-cp scripts/manutencao_celesc /etc/cron.daily
