@@ -64,6 +64,9 @@ sudo apt-get install -y gnome-shell-pomodoro
 ## Others ##
 sudo apt-get install -y keepass2
 
+## Languages ##
+sudo apt-get install aspell-pt
+
 
 ##### Configuration #####
 
