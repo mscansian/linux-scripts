@@ -40,6 +40,7 @@ sudo pip install virtualenv -y
 #sudo apt-get install -y apache2
 #sudo apt-get install -y php5 libapache2-mod-php5 php5-mcrypt php5-sqlite php5-curl
 #sudo apt-get install -y nginx
+sudo apt-get install -y golang
 
 ## Wine ##
 sudo apt-get install -y wine
@@ -77,7 +78,7 @@ git config --global push.default simple
 
 ## Ubuntu Software Center ##
 # Fix for GNOME Shell dark theme
-sudo sh -c "cat /usr/share/software-center/ui/gtk3/css/softwarecenter.css | sed 's/@define-color light-aubergine #DED7DB;/@define-color light-aubergine #393F3F;/' | sed 's/@define-color super-light-aubergine #F4F1F3;/@define-color super-light-aubergine #393F3F;/' > /usr/share/software-center/ui/gtk3/css/softwarecenter.css"
+#sudo sh -c "cat /usr/share/software-center/ui/gtk3/css/softwarecenter.css | sed 's/@define-color light-aubergine #DED7DB;/@define-color light-aubergine #393F3F;/' | sed 's/@define-color super-light-aubergine #F4F1F3;/@define-color super-light-aubergine #393F3F;/' > /usr/share/software-center/ui/gtk3/css/softwarecenter.css"
 
 ##### Additional software #####
 
@@ -88,3 +89,7 @@ cd $curdir && source app-install/spotify.sh
 cd $curdir && source app-install/slack.sh
 cd $curdir && source app-install/dropbox.sh
 cd $curdir && source app-install/docker.sh
+
+#### Notifications ####
+echo "These softwares are missing, but you should install:"
+echo "Sublime Text https://www.sublimetext.com"
