@@ -19,4 +19,4 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 sudo systemctl enable docker
 
-sudo pip install docker-compose -y
+sudo pip install docker-compose
