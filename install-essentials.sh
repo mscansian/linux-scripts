@@ -26,7 +26,7 @@ sudo apt-get install -y python-pip python3-pip
 sudo apt-get install -y xdotool
 
 ## System administration ##
-sudo apt-get install -y gufw
+sudo apt-get install -y gufw && sudo ufw enable
 sudo apt-get install -y grub-customizer
 sudo apt-get install -y gparted
 sudo apt-get install -y samba
